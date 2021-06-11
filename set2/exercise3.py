@@ -32,11 +32,11 @@ def fix_it(moves=True, should_move=True):
         else:
             return "Duct Tape"
 
-    else:
-        if should_move == True:
-            return "WD-40"
-        else:
+    if moves == False:
+        if should_move == False:
             return "No Problem"
+        else:
+            return "WD-40"
 
 
 def loops_1a():
@@ -46,7 +46,12 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    stars = []
+
+    for i in range(10):
+        stars.append("*")
+
+    return stars
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -56,7 +61,12 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    hash = []
+
+    for i in range(number_of_items):
+        hash.append(symbol)
+
+    return hash
 
 
 def loops_2():
@@ -77,7 +87,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+
+    stars = []
+    for i in range(10):
+        row = []
+        for j in range(10):
+            row.append("*")
+        stars.append(row)
+    return stars
 
 
 def loops_3():
@@ -101,7 +118,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    numbers = []
+    for i in range(10):
+        row = []
+        for j in range(10):
+            row.append(str(i))
+        numbers.append(row)
+    return numbers
 
 
 def loops_4():
@@ -121,7 +144,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numbers = []
+    for i in range(10):
+        row = []
+        for j in range(10):
+            row.append(str(j))
+        numbers.append(row)
+    return numbers
 
 
 def loops_5():
@@ -148,7 +177,14 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    numbers = []
+    for i in range(10):
+        row = []
+        for j in range(5):
+            row.append(f"(i{i}, j{j})")
+
+        numbers.append(row)
+    return numbers
 
 
 def loops_6():
@@ -171,7 +207,16 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    numbers = []
+
+    for i in range(10):
+        k = i - 1
+        row = []
+        for j in range(5):
+            row.append(f"({i}, {i} +'1')")
+
+        numbers.append(row)
+    return numbers
 
 
 def loops_7():
