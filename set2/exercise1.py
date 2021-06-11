@@ -29,7 +29,7 @@ print(some_words)
 if len(some_words) > 3:
     print('some_words contains more than 3 words')
 
-#this will get the information about current operating system (or of the)
+#this will get the information about current operating system (or of the platform)
 def usefulFunction():
     """
     You may want to look up what uname does before you guess
@@ -39,3 +39,4 @@ def usefulFunction():
     print(platform.uname())
 
 usefulFunction()
+#comes up with platform not defined
