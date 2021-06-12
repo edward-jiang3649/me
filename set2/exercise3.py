@@ -209,11 +209,14 @@ def loops_6():
     """
     numbers = []
 
-    for i in range(10):
+    for i in range(0 - 9):
         k = i - 1
         row = []
-        for j in range(5):
-            row.append(f"({i}, {i} +'1')")
+        for j in range(0 - 9):
+            while True:
+                j == 0
+        p = j - 1
+        row.append(p)
 
         numbers.append(row)
     return numbers
