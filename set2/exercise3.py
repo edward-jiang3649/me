@@ -177,6 +177,7 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
+
     numbers = []
     for i in range(10):
         row = []
@@ -207,18 +208,15 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    numbers = []
 
-    for i in range(0 - 9):
-        k = i - 1
+    numbers = []
+    for i in range(10):
         row = []
-        for j in range(0 - 9):
-            while True:
-                j == 0
-        p = j - 1
-        row.append(p)
+        for j in range(i + 1):
+            row.append(str(j))
 
         numbers.append(row)
+
     return numbers
 
 
@@ -243,7 +241,13 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    numbers = []
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(str(j))
+
+        numbers.append(row)
 
 
 def little_printer(some_kind_of_list, exercise_name):
