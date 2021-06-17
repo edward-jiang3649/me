@@ -220,7 +220,7 @@ def loops_6():
     return numbers
 
 
-def loops_7():
+def loops_7(n):
     """Make a pyramid.
 
     Return this:
@@ -242,8 +242,6 @@ def loops_7():
     lots of diagrams!
     """
 
-
-def triangle(n):
     k = n - 1
     for i in range(0, n):
         for j in range(0, k):
