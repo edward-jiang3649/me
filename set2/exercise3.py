@@ -241,13 +241,13 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    numbers = []
+    stars = []
     for i in range(10):
         row = []
-        for j in range(i + 1):
-            row.append(str(j))
-
-        numbers.append(row)
+        for j in range(i):
+            row.append("*" + "*" + "*")
+        stars.append(row)
+    return stars
 
 
 def little_printer(some_kind_of_list, exercise_name):
