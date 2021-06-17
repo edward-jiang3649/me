@@ -245,7 +245,7 @@ def loops_7():
     for i in range(10):
         row = []
         for j in range(i):
-            row.append("*" + "*" + "*")
+            row.append("*")
         stars.append(row)
     return stars
 
