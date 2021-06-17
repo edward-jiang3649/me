@@ -253,7 +253,7 @@ def loops_7(n):
 
 
 n = 10
-triangle(n)
+loops_7(n)
 
 
 def little_printer(some_kind_of_list, exercise_name):
