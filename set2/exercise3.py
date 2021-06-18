@@ -220,7 +220,7 @@ def loops_6():
     return numbers
 
 
-def loops_7(n):
+def loops_7():
     """Make a pyramid.
 
     Return this:
@@ -244,7 +244,7 @@ def loops_7(n):
 
     HEIGHT = 5
     WIDTH = 9
-    arr = []
+    arrrayslist = []
     num_blanks = 4
 
     for i in range(HEIGHT):
@@ -257,8 +257,8 @@ def loops_7(n):
             else:
                 row.append("*")
         num_blanks -= 1
-        arr.append(row)
-    return arr
+        arrayslist.append(row)
+    return arrrayslist
 
 
 def little_printer(some_kind_of_list, exercise_name):
