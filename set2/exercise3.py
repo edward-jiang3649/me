@@ -242,18 +242,23 @@ def loops_7(n):
     lots of diagrams!
     """
 
-    k = n - 1
-    for i in range(0, n):
-        for j in range(0, k):
-            print(end=" ")
-        k = k - 1
-        for j in range(0, i + 1):
-            print("* ", end="")
-        print("\r")
+    HEIGHT = 5
+    WIDTH = 9
+    arr = []
+    num_blanks = 4
 
-
-n = 10
-loops_7(n)
+    for i in range(HEIGHT):
+        row = []
+        for i in range(WIDTH):
+            if i < num_blanks:
+                row.append(" ")
+            elif WIDTH - i <= num_blanks:
+                row.append(" ")
+            else:
+                row.append("*")
+        num_blanks -= 1
+        arr.append(row)
+    return arr
 
 
 def little_printer(some_kind_of_list, exercise_name):
