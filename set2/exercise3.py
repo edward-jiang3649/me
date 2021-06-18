@@ -257,7 +257,7 @@ def loops_7():
             else:
                 row.append("*")
         num_blanks -= 1
-        arrayslist.append(row)
+        arrrayslist.append(row)
     return arrrayslist
 
 
