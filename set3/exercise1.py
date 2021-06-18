@@ -9,10 +9,14 @@ def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from JUST using range() #TODO: clarify this wording
-    The look up the docs for range(), you can answer this with just the range 
+    The look up the docs for range(), you can answer this with just the range
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+    list_of_numbers = []
+
+    for i in range(start, stop, step):
+        list_of_numbers.append(i)
+    return list_of_numbers
 
 
 def lone_ranger(start, stop, step):
@@ -20,16 +24,19 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
 
 
-def two_step_ranger(start, stop):
+def two_step_ranger(start, stop=None, step=1):
     """Make a range that steps by 2.
 
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    list = []
+
+    for i in range(start, stop, step):
+        list.append(i)
+    return list
 
 
 def stubborn_asker(low, high):
@@ -46,7 +53,7 @@ def stubborn_asker(low, high):
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
 
-    Ask for a number, and if the response is actually NOT a number 
+    Ask for a number, and if the response is actually NOT a number
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
