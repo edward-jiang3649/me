@@ -7,6 +7,7 @@ import random
 
 
 def advancedGuessingGame():
+
     """Play a guessing game with a user.
 
     The exercise here is to rewrite the exampleGuessingGame() function
@@ -26,9 +27,45 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
+    print("\nWelcome to the guessing game!")
+    print("A number between 0 and _ ?")
+    upperBound = input("Enter an upper bound: ")
+    print("OK then, a number between 0 and {} ?".format(upperBound))
+    upperBound = int(upperBound)
+
+    actualNumber = random.randint(0, upperBound)
+
+    guessed = False
+
+    while not guessed:
+        guessedNumber = int(input("Guess a number: "))
+        print(
+            "You guessed {},".format(guessedNumber),
+        )
+        if guessedNumber == actualNumber:
+            print("You got it!! It was {}".format(actualNumber))
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
     return "You got it!"
-    # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
 if __name__ == "__main__":
     print(advancedGuessingGame())
+
+
+def super_asker(
+    low=int(input("Enter lower bound number: ")),
+    high=int(input("Enter higher bound number: ")),
+):
+
+    numbers = range(low, high)
+    num = input("Please input an integer: ")
+    while type(num) != int:
+        num = input("Error. Please input an INTEGER: ")
+        while num in numbers:
+            return num + "is an integer"
+    else:
+        return "false"
