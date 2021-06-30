@@ -45,15 +45,20 @@ def advancedGuessingGame():
         if guessedNumber == actualNumber:
             print("You got it!! It was {}".format(actualNumber))
             guessed = True
-        elif guessedNumber < actualNumber:
-            print("Too small, try again :'(")
+
+            if guessedNumber < actualNumber:
+                print("Too small, try again :'(")
+            if guessedNumber != actualNumber:
+                print("Try again")
+            else:
+                print
+
         else:
             print("Too big, try again :'(")
-    return "You got it!"
+            return "You got it!"
 
-
-if __name__ == "__main__":
-    print(advancedGuessingGame())
+    if __name__ == "__main__":
+        print(advancedGuessingGame())
 
 
 def super_asker(
