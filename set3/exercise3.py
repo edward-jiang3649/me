@@ -26,37 +26,45 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+    print("\n Welcome to the guessing game!")
+    print("A number between _ and _ ?")
 
-    lower_Bound = super_asker(-1000000, 100000, "Enter an lower bound: ")
-    upper_Bound = super_asker(lower_Bound, 100000, "Enter an upper bound: ")
+    low = super_asker(-1000000, 100000, "Enter an lower bound: ")
+    high = super_asker(low, 100000, "Enter an upper bound: ")
 
-    actual = random.randint(lower_Bound, upper_Bound)
+    actual = random.randint(low, high)
 
     guard = 0
     while guard < 1000:
         guard += 1
-        guess = super_asker(lower_Bound, upper_Bound, "Guess a number in this range")
-        if guess == actual:
-            return "You got it"
-        elif guess < actual:
-            print("Too Low, Guess Higher")
-        elif guess > actual:
-            print("Too High, Guess Lower")
+    guess = super_asker(low, high, "Guess a number in this range")
+    if guess == actual:
+        return "You got it"
+    elif guess < actual:
+        print("Too Low, Guess Higher")
+    elif guess > actual:
+        print("Too High, Guess Lower")
 
     if __name__ == "__main__":
         print(advancedGuessingGame())
 
 
-def super_asker(
-    low=int(input("Enter lower bound number: ")),
-    high=int(input("Enter higher bound number: ")),
-):
+def super_asker(low, high, message):
+    """Robust asking function.
 
-    numbers = range(low, high)
-    num = input("Please input an integer: ")
-    while type(num) != int:
-        num = input("Error. Please input an INTEGER: ")
-        while num in numbers:
-            return num + "is an integer"
-    else:
-        return "false"
+    Combine what you learnt from stubborn_asker and not_number_rejector
+    to make a function that does it all!
+    Try to call at least one of the other functions to minimise the
+    amount of code.
+    """
+    while True:
+        try:
+            askfornumber = input(message)
+            print(askfornumber, "here")
+            askfornumber = int(askfornumber)
+            print("{} is a number".format(askfornumber))
+            if low < askfornumber < high:
+                print("well done, {} is within range".format(askfornumber))
+                return askfornumber
+        except Exception as e:
+            print(f"{e} is not a number **")
