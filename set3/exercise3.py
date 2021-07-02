@@ -27,35 +27,21 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
-    print("\nWelcome to the guessing game!")
-    print("A number between 0 and _ ?")
-    upperBound = input("Enter an upper bound: ")
-    print("OK then, a number between 0 and {} ?".format(upperBound))
-    upperBound = int(upperBound)
+    lower_Bound = super_asker(-1000000, 100000, "Enter an lower bound: ")
+    upper_Bound = super_asker(lower_Bound, 100000, "Enter an upper bound: ")
 
-    actualNumber = random.randint(0, upperBound)
+    actual = random.randint(lower_Bound, upper_Bound)
 
-    guessed = False
-
-    while not guessed:
-        guessedNumber = int(input("Guess a number: "))
-        print(
-            "You guessed {},".format(guessedNumber),
-        )
-        if guessedNumber == actualNumber:
-            print("You got it!! It was {}".format(actualNumber))
-            guessed = True
-
-            if guessedNumber < actualNumber:
-                print("Too small, try again :'(")
-            if guessedNumber != actualNumber:
-                print("Try again")
-            else:
-                print
-
-        else:
-            print("Too big, try again :'(")
-            return "You got it!"
+    guard = 0
+    while guard < 1000:
+        guard += 1
+        guess = super_asker(lower_Bound, upper_Bound, "Guess a number in this range")
+        if guess == actual:
+            return "You got it"
+        elif guess < actual:
+            print("Too Low, Guess Higher")
+        elif guess > actual:
+            print("Too High, Guess Lower")
 
     if __name__ == "__main__":
         print(advancedGuessingGame())
