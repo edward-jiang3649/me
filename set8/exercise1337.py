@@ -50,11 +50,8 @@ def dictionary_please() -> dict:
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = 5
-    if well_is_it == 5:
-        return True
-    else:
-        return False
+    well_is_it = some_number == 5
+    return well_is_it
 
 
 def take_five(some_number) -> int:
@@ -211,7 +208,7 @@ def make_filler_text_dictionary() -> Dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-    for i in range(2, 8):
+    for i in range(3, 8):
         wd[i] = []
         for _ in range(4):
             r = requests.get(url + str(i))
@@ -235,8 +232,8 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
     words = []
     for _ in range(number_of_words):
-        word_length = random.randint()
-        word_index = random.randint()
+        word_length = random.randint(3, 6)
+        word_index = random.randint(0, 2)
         words.append(my_dict[word_length][word_index])
 
     return " ".join(words)
