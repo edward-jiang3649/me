@@ -75,11 +75,11 @@ def fizz_buzz():
         the multiples of five print "Buzz". For numbers which are
         multiples of both three and five print "FizzBuzz"."
     from https://blog.codinghorror.com/why-cant-programmers-program/
-    
-    Return a list that has an integer if the number isn't special, 
-    and a string if it is. E.g. 
-        [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 
-         'Fizz', 'Buzz',  11, 'Fizz', 13, 14, 
+
+    Return a list that has an integer if the number isn't special,
+    and a string if it is. E.g.
+        [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8,
+         'Fizz', 'Buzz',  11, 'Fizz', 13, 14,
          'FizzBuzz', 16, 17, ...]
     """
     fizzBuzzList = []
@@ -101,7 +101,7 @@ def put_behind_bars(input_string="very naughty boy"):
     Given any string, interleave it with pipes (| this character)
     e.g. "very naughty boy" should return the string
     "|v|e|r|y| |n|a|u|g|h|t|y| |b|o|y|"
-    TIP: strings are pretty much lists of chars. 
+    TIP: strings are pretty much lists of chars.
          If you list("string") you get ['s', 't', 'r', 'i', 'n', 'g']
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
@@ -152,23 +152,23 @@ def best_letter_for_pets():
 def make_filler_text_dictionary():
     """Make a dictionary of random words filler text.
     There is a random word generator here:
-    https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=4 
+    https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=4
     If we set minLength=18 and maxLength=18, we will get something like this:
     >>> url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=18"
     >>> r = requests.get(url)
     >>> r.text # will get you a string, something like this:
     >>> "occipitosphenoidal"
-    
+
     Return a dictionary where the keys are numbers, and the values are lists of
     words. e.g.
-    { 
+    {
         3: ['Sep', 'the', 'yob'],
         4: ['aaaa', 'bbbb', 'cccc'],
         ...
         7: ['aaaaaaa', 'bbbbbbb', 'ccccccc']
     }
     Use the API to get the 3 words.
-    
+
     The dictionary should have the numbers between 3 and 7 inclusive.
     (i.e. 3, 4, 5, 6, 7 and 3 words for each)
     TIP: you'll need the requests library
@@ -194,7 +194,7 @@ def random_filler_text(number_of_words=200):
     length, and a random one of the 3 words.
     Make the paragraph have number_of_words words in it.
     Return it as a string
-    TIP: you'll need the random library, 
+    TIP: you'll need the random library,
         see line 77 of Set4/hangman_leadboard.py for an example.
     """
     import random
@@ -217,8 +217,8 @@ def fast_filler(number_of_words=200):
     the internet.
     Use the filename "dict_racey.json"
     TIP: you'll need the os and json libraries
-    TIP: you'll probably want to use json dumps and loads to get the 
-    dictionary into and out of the file. Be careful when you read it back in, 
+    TIP: you'll probably want to use json dumps and loads to get the
+    dictionary into and out of the file. Be careful when you read it back in,
     it'll convert integer keys to strings.
     If you get this one to work, you are a Very Good Programmer™!
     """

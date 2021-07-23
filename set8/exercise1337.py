@@ -108,17 +108,18 @@ def fizz_buzz() -> List:
          'Fizz', 'Buzz',  11, 'Fizz', 13, 14,
          'FizzBuzz', 16, 17, ...]
     """
-    for fizzbuzz in range(1, 101):
-        if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
-            print("FizzBuzz")
-            continue
-        elif fizzbuzz % 3 == 0:
-            print("Fizz")
-            continue
-        elif fizzbuzz % 5 == 0:
-            print("Buzz")
-            continue
-        return List
+    fizzBuzzList = []
+    # your code here
+    for i in range(1, 101):
+        if i % 3 is 0 and i % 5 is 0:
+            fizzBuzzList.append("FizzBuzz")
+        elif i % 3 is 0:
+            fizzBuzzList.append("Fizz")
+        elif i % 5 is 0:
+            fizzBuzzList.append("Buzz")
+        else:
+            fizzBuzzList.append(i)
+    return fizzBuzzList
 
 
 def set_it_on_fire(input_string="very naughty boy") -> str:
@@ -133,7 +134,9 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
 
-    return None
+    bars = list(input_string.upper())
+    bars = "🔥".join(bars)
+    return "🔥" + bars + "🔥"
 
 
 def pet_filter(letter="a") -> List:
@@ -152,6 +155,10 @@ def pet_filter(letter="a") -> List:
     # fmt: on
     filtered = []
 
+    filtered = []
+    for pet in pets:
+        if letter in pet:
+            filtered.append(pet)
     return filtered
 
 
@@ -166,8 +173,13 @@ def best_letter_for_pets() -> str:
     import string
 
     the_alphabet = string.ascii_lowercase
+    longest = -1
     most_popular_letter = ""
-
+    for letter in the_alphabet:
+        x = len(pet_filter(letter))
+        if x > longest:
+            longest = x
+            most_popular_letter = letter
     return most_popular_letter
 
 
@@ -195,9 +207,15 @@ def make_filler_text_dictionary() -> Dict:
     (i.e. 3, 4, 5, 6, 7 and 4 words for each)
     TIP: you'll need the requests library
     """
+    import requests
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
+    for i in range(3, 8):
+        wd[i] = []
+        for _ in range(3):
+            r = requests.get(url + str(i))
+            wd[i].append(r.text)
 
     return wd
 
@@ -212,10 +230,14 @@ def random_filler_text(number_of_words=200) -> str:
     TIP: you'll need the random library,
         e.g. random.randint(low, high)
     """
+    import random
 
     my_dict = make_filler_text_dictionary()
-
     words = []
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 6)
+        word_index = random.randint(0, 2)
+        words.append(my_dick[word_length][word_index])
 
     return " ".join(words)
 
@@ -243,9 +265,7 @@ def fast_filler(number_of_words=200) -> str:
 if __name__ == "__main__":
     print("give_me_five", give_me_five(), type(give_me_five()))
     print(
-        "strong_password_please",
-        password_please(),
-        type(password_please()) == str,
+        "strong_password_please", password_please(), type(password_please()) == str,
     )
     print("int_list_please", int_list_please(), type(int_list_please()) == list)
     print(
