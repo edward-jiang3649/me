@@ -211,9 +211,9 @@ def make_filler_text_dictionary() -> Dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-    for i in range(3, 8):
+    for i in range(2, 8):
         wd[i] = []
-        for _ in range(3):
+        for _ in range(4):
             r = requests.get(url + str(i))
             wd[i].append(r.text)
 
@@ -235,9 +235,9 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
     words = []
     for _ in range(number_of_words):
-        word_length = random.randint(3, 6)
-        word_index = random.randint(0, 2)
-        words.append(my_dick[word_length][word_index])
+        word_length = random.randint()
+        word_index = random.randint()
+        words.append(my_dict[word_length][word_index])
 
     return " ".join(words)
 
@@ -256,10 +256,31 @@ def fast_filler(number_of_words=200) -> str:
     it'll convert integer keys to strings.
     If you get this one to work, you are a Very Good Programmer™!
     """
+    import random
+    import os
+    import json
 
     fname = "dict_cache.json"
+    if os.path.isfile(fname):
+        with open(fname, "r") as inFile:
+            my_dict = json.load(inFile)
+    else:
+        my_dict = make_filler_text_dictionary()
+        with open(fname, "w") as outFile:
+            json.dump(my_dict, outFile)
+    words = []
 
-    return None
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 6)
+        word_index = random.randint(0, 2)
+        try:
+            words.append(my_dict[word_length][word_index])
+        except KeyError:
+            words.append(my_dict[str(word_length)][word_index])
+
+    paragraph = " ".join(words)
+    paragraph = paragraph[0].upper() + paragraph[1:]
+    return paragraph + "."
 
 
 if __name__ == "__main__":
