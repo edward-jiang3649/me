@@ -59,7 +59,7 @@ def is_it_5(some_number) -> bool:
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return some_number-5
+    return some_number - 5
 
 
 def greet(name="Towering Timmy") -> str:
@@ -108,13 +108,17 @@ def fizz_buzz() -> List:
          'Fizz', 'Buzz',  11, 'Fizz', 13, 14,
          'FizzBuzz', 16, 17, ...]
     """
-    fizz_buzz_list = [range(0, 101)]
-    # your code here
-    f = "Fizz"
-    b = "Buzz"
-    fb = "FizzBuzz"
-
-    return fizz_buzz_list
+    for fizzbuzz in range(1, 101):
+        if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+            print("FizzBuzz")
+            continue
+        elif fizzbuzz % 3 == 0:
+            print("Fizz")
+            continue
+        elif fizzbuzz % 5 == 0:
+            print("Buzz")
+            continue
+        return List
 
 
 def set_it_on_fire(input_string="very naughty boy") -> str:
@@ -243,8 +247,7 @@ if __name__ == "__main__":
         password_please(),
         type(password_please()) == str,
     )
-    print("int_list_please", int_list_please(),
-          type(int_list_please()) == list)
+    print("int_list_please", int_list_please(), type(int_list_please()) == list)
     print(
         "string_list_please", string_list_please(), type(string_list_please()) == list
     )
