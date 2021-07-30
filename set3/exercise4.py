@@ -3,8 +3,7 @@
 
 
 import math
-
-# import time
+import time
 
 
 def binary_search(low, high, actual_number):
